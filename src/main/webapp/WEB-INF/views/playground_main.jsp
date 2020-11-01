@@ -48,12 +48,12 @@
     });
 
     $(document).on("click", "button[name='refreshBtnNM']", function() {
-
+		console.log("JH : Click..");
         var params = {
-            productName : $("input[name='productName']").val(),
+            page : "main",
         }
         $.ajax({
-            url			:	"/usedProductMarket",
+            url			:	"/getPredictationNumber",
             type 		:	"post",
             dataType	:	"json",
             contentType :	"application/x-www-form-urlencoded; charset=UTF-8",
@@ -63,9 +63,9 @@
             },
             error       :	function(request, status, error) {
                 console.log("textStatus: "+status+", error: "+error);
-                alert("예상치 못한 오류가 발생했습니다.");
+                alert("ERROR!");
             }
-        })
+        });
     });
 
 </script>
@@ -86,15 +86,12 @@
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Services</h2>
             <h3 class="section-subheading text-muted">로또 당첨 예상번호 조회 서비스</h3>
+            <button type="button" class="btn btn-primary js-scroll-trigger btn-lg" id="refreshBtn" name="refreshBtnNM">Refresh</button>
         </div>
         <div class="row text-center">
             <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3">E-Commerce</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <h4 class="my-3">10 10 10 10 10</h4>
+                <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p> -->
             </div>
         </div>
     </div>
