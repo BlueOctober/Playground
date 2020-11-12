@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+#loadingDiv {
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	opacity: 0.6;
+	background: #fff;
+	backgroundColor: #fff;
+	text-align: center;
+	z-index: 999;
+	/* filter: alpha(opacity=60); */
+}
+#loadingDiv-image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 100;
+}

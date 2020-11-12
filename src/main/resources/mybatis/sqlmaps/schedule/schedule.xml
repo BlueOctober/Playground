@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.azurepassion.schedule.dao.ScheduleDao"><!-- namespace에서 interface로 정의된 DAO를 정확히 명시해주어야 한다 -->
+	
+	<insert id="insertLottoInfo" parameterType="java.util.HashMap">
+        insert into kjh.lotto_history (
+			drw_no,
+		    drwt_no1,
+		    drwt_no2,
+		    drwt_no3,
+		    drwt_no4,
+		    drwt_no5,
+		    drwt_no6,
+		    bnus_no,
+		    drw_no_date,
+		    register_user_id,
+		    register_datetime
+        ) value (
+            #{drwNo},
+            #{drwtNo1},
+            #{drwtNo2},
+            #{drwtNo3},
+            #{drwtNo4},
+            #{drwtNo5},
+            #{drwtNo6},
+            #{bnusNo},
+            #{drwNoDate},
+            'BATCH_ADMIN',
+            now()
+        )
+	</insert>
+	
+	<insert id="insertPredictionNumber" parameterType="java.util.HashMap">
+        insert into kjh.lotto_prediction (
+			drw_no,
+			no_desc,
+		    drwt_no1,
+		    drwt_no2,
+		    drwt_no3,
+		    drwt_no4,
+		    drwt_no5,
+		    drwt_no6,
+		    register_user_id,
+		    register_datetime
+        ) value (
+            #{drw_no},
+            #{no_desc},
+            #{drwt_no1},
+            #{drwt_no2},
+            #{drwt_no3},
+            #{drwt_no4},
+            #{drwt_no5},
+            #{drwt_no6},
+            'BATCH_ADMIN',
+            now()
+        )
+	</insert>
+	
+</mapper>
